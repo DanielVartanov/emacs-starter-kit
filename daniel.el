@@ -16,7 +16,7 @@
 
 (require 'magit)
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/gist.el"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/gist"))
 (require 'gist)
 
 (add-to-list 'load-path (concat dotfiles-dir "vendor/yasnippet"))
@@ -24,6 +24,9 @@
 (yas/initialize)
 (yas/load-directory (concat dotfiles-dir "vendor/yasnippet/snippets"))
 
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/smooth-scroll"))
+(require 'smooth-scroll)
+(smooth-scroll-mode t)
 
 ;; Emacs frame setting
 
@@ -45,3 +48,8 @@
 
 ;; (global-set-key (kbd "C-tab") 'other-window)
 ;; (global-set-key (kbd "C-backspace") 'backward-kill-sexp)
+
+(global-set-key [(control  down)]  'scroll-up-1)
+(global-set-key [(control  up)]    'scroll-down-1)
+(global-set-key [(control  left)]  'scroll-right-1)
+(global-set-key [(control  right)] 'scroll-left-1)
