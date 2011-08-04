@@ -4,3 +4,6 @@
 [submodule "vendor/rspec-mode"]
 	path = vendor/rspec-mode
 	url = git://github.com/pezra/rspec-mode.git
+[submodule "vendor/smooth-scroll"]
+	path = vendor/smooth-scroll
+	url = git://github.com/k-talo/smooth-scroll.el.git
