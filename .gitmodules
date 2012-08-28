@@ -10,3 +10,6 @@
 [submodule "vendor/rvm.el"]
 	path = vendor/rvm.el
 	url = git://github.com/senny/rvm.el.git
+[submodule "vendor/gist"]
+	path = vendor/gist
+	url = git://github.com/defunkt/gist.el.git
