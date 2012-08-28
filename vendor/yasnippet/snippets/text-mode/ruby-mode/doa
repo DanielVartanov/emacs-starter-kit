@@ -1,5 +1,5 @@
 #name : do ... end
 # --
-do
+do |${1:args}|
   $0
 end
