@@ -7,3 +7,6 @@
 [submodule "vendor/smooth-scroll"]
 	path = vendor/smooth-scroll
 	url = git://github.com/k-talo/smooth-scroll.el.git
+[submodule "vendor/rvm.el"]
+	path = vendor/rvm.el
+	url = git://github.com/senny/rvm.el.git
