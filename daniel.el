@@ -13,8 +13,8 @@
 
 (require 'magit)
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/gist"))
-(require 'gist)
+;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/gist"))
+;; (require 'gist)
 
 (add-to-list 'load-path (concat dotfiles-dir "vendor/yasnippet"))
 (require 'yasnippet)
@@ -24,9 +24,6 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/smooth-scroll"))
 (require 'smooth-scroll)
 (smooth-scroll-mode t)
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/slim-mode"))
-(require 'slim-mode)
 
 ;; RSpec mode
 
