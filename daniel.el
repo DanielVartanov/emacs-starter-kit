@@ -3,6 +3,8 @@
        (:network-server . "talk.google.com")
        (:connection-type . ssl))))
 
+(set-default-font "Source Code Pro")
+
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (require 'color-theme)
 (color-theme-twilight)
