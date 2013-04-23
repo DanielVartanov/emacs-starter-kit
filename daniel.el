@@ -27,21 +27,24 @@
 (require 'smooth-scroll)
 (smooth-scroll-mode t)
 
+
+;; RVM
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm.el"))
+(require 'rvm)
+(rvm-activate-corresponding-ruby)
+
+
 ;; RSpec mode
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rspec-mode"))
 (require 'rspec-mode)
 
-(defadvice rspec-compile (around rspec-compile-around)
-  "Use BASH shell for running the specs because of RVM issues."
-  (let ((shell-file-name "/bin/bash"))
-    ad-do-it))
-(ad-activate 'rspec-compile)
+(setq rspec-use-rake-flag nil)
+(setq rspec-use-rvm t)
+(setq rspec-use-zeus-when-possible t)
+(setq rspec-compilation-buffer-name "*rspec*")
 
-;; RVM
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm.el"))
-(require 'rvm)
-(rvm-use-default) ;; use rvm's default ruby for the current Emacs session
 
 ;; Erlang setup
 
