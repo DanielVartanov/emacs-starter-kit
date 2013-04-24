@@ -1,22 +1,12 @@
-(setq jabber-account-list
-    '(("aldor.kg@gmail.com" 
-       (:network-server . "talk.google.com")
-       (:connection-type . ssl))))
-
 (set-default-font "Source Code Pro")
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (require 'color-theme)
 (color-theme-twilight)
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/feature-mode"))
-(require 'feature-mode)
-(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
-
 (require 'magit)
 
-;; (add-to-list 'load-path (concat dotfiles-dir "/vendor/gist"))
-;; (require 'gist)
+(require 'gist)
 
 (add-to-list 'load-path (concat dotfiles-dir "vendor/yasnippet"))
 (require 'yasnippet)
@@ -46,6 +36,13 @@
 (setq rspec-compilation-buffer-name "*rspec*")
 
 
+;; Feature mode
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/feature-mode"))
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+
+
 ;; Erlang setup
 
 (setq load-path (cons "/usr/local/lib/erlang/lib/tools-2.6.6.5/emacs" load-path))
@@ -60,6 +57,7 @@
 (setq erlang-indent-level 2)
 (require 'erlang-start)
 
+
 ;; Emacs frame setting
 
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
@@ -73,6 +71,8 @@
 
 (setq ido-use-filename-at-point nil)
 (setq next-line-add-newlines nil)
+(tabbar-mode -1)
+
 
 ;; Rebindings
 
@@ -86,7 +86,6 @@
 
 (global-set-key (kbd "C-S-s") 'replace-string)
 
-;; (global-set-key (kbd "C-tab") 'other-window)
 ;; (global-set-key (kbd "C-backspace") 'backward-kill-sexp)
 
 (global-set-key [(control  down)]  'scroll-up-1)
