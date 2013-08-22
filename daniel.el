@@ -1,5 +1,3 @@
-(set-default-font "Source Code Pro")
-
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (require 'color-theme)
 (color-theme-twilight)
@@ -43,35 +41,22 @@
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 
-;; Erlang setup
-
-(setq load-path (cons "/usr/local/lib/erlang/lib/tools-2.6.6.5/emacs" load-path))
-(setq erlang-root-dir "/usr/local/lib/erlang")
-(setq exec-path (cons "/usr/local/lib/erlang/bin" exec-path))
-
-(setq erlang-mode-hook
-    (function (lambda ()
-                (setq indent-tabs-mode nil))))
-(setq-default indent-tabs-mode nil)
-(setq indent-tabs-mode nil)
-(setq erlang-indent-level 2)
-(require 'erlang-start)
-
-
 ;; Emacs frame setting
 
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) 
 
-(set-face-attribute 'default nil :height 120)
+(set-default-font "Source Code Pro")
+(set-face-attribute 'default nil :height 105)
 
+(setq-default truncate-lines nil)
 
 ;; Misc options
 
 (setq ido-use-filename-at-point nil)
 (setq next-line-add-newlines nil)
-(tabbar-mode -1)
+;; (tabbar-mode -1)
 
 
 ;; Rebindings
@@ -88,7 +73,7 @@
 
 ;; (global-set-key (kbd "C-backspace") 'backward-kill-sexp)
 
-(global-set-key [(control  down)]  'scroll-up-1)
-(global-set-key [(control  up)]    'scroll-down-1)
-(global-set-key [(control  left)]  'scroll-right-1)
-(global-set-key [(control  right)] 'scroll-left-1)
+(global-set-key (kbd "C-S-n")  'scroll-up-1)
+(global-set-key (kbd "C-S-p")    'scroll-down-1)
+(global-set-key [(control left)]  'scroll-right-1)
+(global-set-key [(control right)] 'scroll-left-1)
