@@ -1,0 +1,5 @@
+#name : let(...) do ... end
+# --
+let(:${1:symbol}) do
+  $0
+end
