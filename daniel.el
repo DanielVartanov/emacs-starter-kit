@@ -48,7 +48,7 @@
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1)) 
 
 (set-default-font "Source Code Pro")
-(set-face-attribute 'default nil :height 105)
+(set-face-attribute 'default nil :height 110)
 
 (setq-default truncate-lines nil)
 
@@ -57,6 +57,7 @@
 (setq ido-use-filename-at-point nil)
 (setq next-line-add-newlines nil)
 ;; (tabbar-mode -1)
+(setq js-indent-level 2)
 
 
 ;; Rebindings
@@ -70,8 +71,6 @@
 (global-set-key (kbd "M-f") 'ruby-forward-sexp)
 
 (global-set-key (kbd "C-S-s") 'replace-string)
-
-;; (global-set-key (kbd "C-backspace") 'backward-kill-sexp)
 
 (global-set-key (kbd "C-S-n")  'scroll-up-1)
 (global-set-key (kbd "C-S-p")    'scroll-down-1)
