@@ -1,0 +1,35 @@
+;; -*- mode: Lisp; -*-
+
+(setq prj-version nil)
+
+(setq prj-list
+      '((".emacs.d" "~/.emacs.d")
+        ("my-texts" "~/Dropbox/my-texts")
+        ("veeqo" "~/src/veeqo")
+        ("savon" "~/src/vendor/savon")
+        ("ebayapi-19" "~/src/ebayapi-19")
+        ("colobot" "~/src/colobot")
+        ("shopify_api" "~/src/shopify_api")
+        ("shopify_api" "~/src/vendor/shopify_api")
+        ("ruby-geometry" "~/src/ruby-geometry")
+        ("rails3-caching-sandbox" "~/src/rails3-caching-sandbox")
+        ("rails4-caching-sandbox" "~/src/rails4-caching-sandbox")
+        ("array_to_proc" "~/src/array_to_proc")
+        ("gravity" "~/src/gravity")
+        ("jbuilder-benchmark" "~/src/jbuilder-benchmark")
+        ("install-fest" "~/src/install-fest")
+        ("rails4-sandbox" "~/src/rails4-sandbox")
+        ("mws-rb" "~/src/mws-rb")
+        ("paranoia" "~/src/paranoia")
+        ("veeqo-framework" "~/src/veeqo-framework")
+        ("ruby_koans" "~/src/ruby_koans")
+        ("eproject" "/home/daniel/.emacs.d/elpa/eproject-0.4")))
+
+(setq prj-last-open nil)
+
+(setq prj-frame-pos
+      '((top . 0)
+        (left . 0)
+        (width . 190)
+        (height . 46)))
+

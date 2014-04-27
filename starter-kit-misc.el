@@ -30,14 +30,12 @@
       ffap-machine-p-known 'reject
       whitespace-style '(trailing lines space-before-tab
                                   face indentation space-after-tab)
-      whitespace-line-column 100
       ediff-window-setup-function 'ediff-setup-windows-plain
       oddmuse-directory (concat dotfiles-dir "oddmuse")
       xterm-mouse-mode t
       save-place-file (concat dotfiles-dir "places"))
 
 (add-to-list 'safe-local-variable-values '(lexical-binding . t))
-(add-to-list 'safe-local-variable-values '(whitespace-line-column . 80))
 
 ;; Set this to whatever browser you use
 ;; (setq browse-url-browser-function 'browse-url-firefox)
