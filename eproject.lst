@@ -1,6 +1,6 @@
 ;; -*- mode: Lisp; -*-
 
-(setq prj-version nil)
+(setq prj-version "0.4")
 
 (setq prj-list
       '((".emacs.d" "~/.emacs.d")
@@ -25,7 +25,7 @@
         ("ruby_koans" "~/src/ruby_koans")
         ("eproject" "/home/daniel/.emacs.d/elpa/eproject-0.4")))
 
-(setq prj-last-open nil)
+(setq prj-last-open ".emacs.d")
 
 (setq prj-frame-pos
       '((top . 0)

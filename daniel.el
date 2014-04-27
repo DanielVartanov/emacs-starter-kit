@@ -12,9 +12,6 @@
 
 (setq-default truncate-lines nil)
 
-(custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
-
 
 ;; Load plugins
 
@@ -40,7 +37,7 @@
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm.el"))
 (require 'rvm)
-(rvm-activate-corresponding-ruby)
+;; (rvm-activate-corresponding-ruby)
 
 
 ;; RSpec mode
