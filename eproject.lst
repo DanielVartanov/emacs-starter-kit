@@ -3,7 +3,8 @@
 (setq prj-version "0.4")
 
 (setq prj-list
-      '(("veeqo" "~/src/veeqo")
+      '((".emacs.d" "~/.emacs.d")
+        ("veeqo" "~/src/veeqo")
         ("api2cart-daemon" "~/src/api2cart-daemon")
         ("api2cart-ruby" "~/src/api2cart-ruby")
         ("veeqo-anti-throttling-proxy" "~/src/veeqo-anti-throttling-proxy")
@@ -20,7 +21,6 @@
         ("proxymachine" "~/src/vendor/proxymachine")
         ("Mei" "~/src/vendor/Mei")
         ("em-proxy" "~/src/vendor/em-proxy")
-        (".emacs.d" "~/.emacs.d")
         ("heroku" "~/src/heroku")
         ("heroku-rails-runner" "~/src/heroku-rails-runner")
         ("data-wales" "~/src/data-wales")
@@ -49,7 +49,7 @@
         ("ruby_koans" "~/src/ruby_koans")
         ("eproject" "/home/daniel/.emacs.d/elpa/eproject-0.4")))
 
-(setq prj-last-open "veeqo")
+(setq prj-last-open ".emacs.d")
 
 (setq prj-frame-pos
       '((top . 0)
