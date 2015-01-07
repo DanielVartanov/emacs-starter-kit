@@ -1,0 +1,5 @@
+#name : it '...' do .. end
+# --
+it '${1:comment}' do
+  $0
+end

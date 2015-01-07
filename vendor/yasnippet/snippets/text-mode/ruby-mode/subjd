@@ -1,0 +1,5 @@
+#name : subject do...end
+# --
+subject do
+  $0
+end
