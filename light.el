@@ -10,7 +10,6 @@
 (setq-default truncate-lines nil)
 
 
-
 (setq dotfiles-dir (file-name-directory
                      (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
@@ -25,8 +24,15 @@
 
 
 (global-set-key (kbd "C-S-s") 'replace-string)
-(global-set-key (kbd "C-S-n")  'scroll-up-1)
-(global-set-key (kbd "C-S-p")    'scroll-down-1)
+(global-set-key (kbd "C-S-n") 'scroll-up-1)
+(global-set-key (kbd "C-S-p") 'scroll-down-1)
+
+
+;; Configure org-mode
+(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
 
 
 ;; Add everything above this line
