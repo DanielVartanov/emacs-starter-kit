@@ -70,6 +70,7 @@
 ;; (tabbar-mode -1)
 (setq js-indent-level 4)
 
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; Hooks
 
