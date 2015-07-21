@@ -12,13 +12,13 @@
 
 (setq dotfiles-dir (file-name-directory
                      (or (buffer-file-name) load-file-name)))
-(add-to-list 'load-path dotfiles-dir)
 
+(add-to-list 'load-path (concat dotfiles-dir "/starter-kit"))
+
+(package-initialize)
 
 (require 'starter-kit-bindings)
 
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/smooth-scroll"))
 (require 'smooth-scroll)
 (smooth-scroll-mode t)
 
