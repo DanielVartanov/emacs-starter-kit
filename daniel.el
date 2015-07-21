@@ -7,6 +7,8 @@
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized)))))
 
+;; (toggle-frame-fullscreen)
+
 (set-default-font "Source Code Pro")
 (set-face-attribute 'default nil :height 130)
 
@@ -15,18 +17,17 @@
 
 ;; Load plugins
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
-(require 'color-theme)
-(color-theme-twilight)
+(load-theme 'zenburn t)
 
 (require 'magit)
 
 (require 'gist)
 
-(add-to-list 'load-path (concat dotfiles-dir "vendor/yasnippet"))
 (require 'yasnippet)
-(yas/initialize)
-(yas/load-directory (concat dotfiles-dir "vendor/yasnippet/snippets"))
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"))
+
+(yas-global-mode 1)
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/smooth-scroll"))
 (require 'smooth-scroll)
@@ -35,7 +36,6 @@
 
 ;; RVM
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm.el"))
 (require 'rvm)
 ;; (rvm-activate-corresponding-ruby)
 
@@ -95,3 +95,5 @@
 (global-set-key (kbd "C-S-p")    'scroll-down-1)
 (global-set-key [(control left)]  'scroll-right-1)
 (global-set-key [(control right)] 'scroll-left-1)
+
+(setq magit-last-seen-setup-instructions "1.4.0")
