@@ -26,10 +26,8 @@
 (require 'yasnippet)
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets"))
-
 (yas-global-mode 1)
 
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/smooth-scroll"))
 (require 'smooth-scroll)
 (smooth-scroll-mode t)
 
@@ -49,13 +47,7 @@
 (setq rspec-use-rvm t)
 (setq rspec-use-zeus-when-possible t)
 (setq rspec-compilation-buffer-name "*rspec*")
-
-
-;; Feature mode
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/feature-mode"))
-(require 'feature-mode)
-(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
+(setq compilation-scroll-output nil)
 
 
 ;; Javascript mode
