@@ -5,7 +5,7 @@
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 (custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+ '(initial-frame-alist (quote ((fullscreen . fullboth)))))
 
 ;; (toggle-frame-fullscreen)
 
@@ -30,6 +30,11 @@
 
 (require 'smooth-scroll)
 (smooth-scroll-mode t)
+
+(require 'ido)
+(ido-mode t)
+
+(require 'rinari)
 
 
 ;; RVM
@@ -67,7 +72,7 @@
 ;; Hooks
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
+(setq server-visit-hook (quote (save-place-find-file-hook)))
 
 ;; Rebindings
 
