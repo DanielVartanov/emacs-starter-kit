@@ -1,8 +1,6 @@
-;; Emacs frame setting
+(require 'better-defaults)
 
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;; Emacs frame setting
 
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . fullboth)))))
@@ -35,6 +33,8 @@
 (ido-mode t)
 
 (require 'rinari)
+
+(smex-initialize)
 
 
 ;; RVM
@@ -94,3 +94,8 @@
 (global-set-key [(control right)] 'scroll-left-1)
 
 (setq magit-last-seen-setup-instructions "1.4.0")
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command) ;; Old M-x.
