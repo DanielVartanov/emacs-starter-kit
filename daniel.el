@@ -59,6 +59,11 @@
 
 (require 'js2-mode)
 
+;; ANSI colours in shell
+
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
+
 
 ;; Misc options
 
