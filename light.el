@@ -39,7 +39,6 @@
 
 ;; Если кажется, что нет чего-то привычного, расскомментируй эту строку
 ;; Но удали все, что ниже ее, оно скопировано из этого файла
-
 ;; (require 'starter-kit-misc)
 
 (setq visible-bell t
@@ -58,7 +57,8 @@
       whitespace-style '(trailing lines space-before-tab
                                   face indentation space-after-tab)
       ediff-window-setup-function 'ediff-setup-windows-plain
-      xterm-mouse-mode t)
+      xterm-mouse-mode t
+      org-fast-tag-selection-single-key t)
 
 ;; Save a list of recent files visited.
 (recentf-mode 1)
