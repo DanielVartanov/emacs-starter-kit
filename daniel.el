@@ -15,9 +15,15 @@
 
 ;; Load plugins
 
+(defvar zenburn-override-colors-alist
+  '(("zenburn-bg+05" . "#282828")
+    ("zenburn-bg+1"  . "#2F2F2F")
+    ("zenburn-bg+2"  . "#3F3F3F")
+    ("zenburn-bg+3"  . "#4F4F4F")))
+
 (load-theme 'zenburn t)
 
-(require 'magit)
+;; (require 'magit)
 
 (require 'gist)
 
@@ -64,6 +70,18 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
 
+;; centered-window-mode
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/centered-window-mode"))
+(require 'centered-window-mode)
+
+;; org-tree-slide
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/org-tree-slide"))
+(require 'org-tree-slide)
+
+(global-set-key (kbd "<f8>") 'org-tree-slide-mode)
+(global-set-key (kbd "S-<f8>") 'org-tree-slide-skip-done-toggle)
 
 ;; Misc options
 

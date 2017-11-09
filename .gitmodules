@@ -13,3 +13,12 @@
 [submodule "vendor/gist"]
 	path = vendor/gist
 	url = git://github.com/defunkt/gist.el.git
+[submodule "vendor/centered-window-mode"]
+	path = vendor/centered-window-mode
+	url = https://github.com/anler/centered-window-mode.git
+[submodule "vendor/epresent"]
+	path = vendor/epresent
+	url = https://github.com/eschulte/epresent.git
+[submodule "vendor/org-tree-slide"]
+	path = vendor/org-tree-slide
+	url = https://github.com/takaxp/org-tree-slide.git
