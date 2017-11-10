@@ -70,6 +70,10 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
 
+;; demo-it
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/demo-it"))
+
 ;; centered-window-mode
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/centered-window-mode"))
