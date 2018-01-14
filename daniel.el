@@ -12,14 +12,7 @@
 
 (setq-default truncate-lines nil)
 
-
 ;; Load plugins
-
-(defvar zenburn-override-colors-alist
-  '(("zenburn-bg+05" . "#282828")
-    ("zenburn-bg+1"  . "#2F2F2F")
-    ("zenburn-bg+2"  . "#3F3F3F")
-    ("zenburn-bg+3"  . "#4F4F4F")))
 
 (load-theme 'zenburn t)
 
@@ -61,6 +54,15 @@
 (setq compilation-scroll-output nil)
 
 
+;; Lua mode
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/lua-mode"))
+
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
+
 ;; Javascript mode
 
 (require 'js2-mode)
@@ -78,6 +80,11 @@
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/centered-window-mode"))
 (require 'centered-window-mode)
+
+;; fancy-narrow
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/fancy-narrow"))
+(require 'fancy-narrow)
 
 ;; org-tree-slide
 

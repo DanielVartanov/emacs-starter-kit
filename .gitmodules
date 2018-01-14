@@ -25,3 +25,9 @@
 [submodule "vendor/demo-it"]
 	path = vendor/demo-it
 	url = https://github.com/howardabrams/demo-it.git
+[submodule "vendor/fancy-narrow"]
+	path = vendor/fancy-narrow
+	url = https://github.com/Malabarba/fancy-narrow.git
+[submodule "vendor/lua-mode"]
+	path = vendor/lua-mode
+	url = https://github.com/immerrr/lua-mode.git
