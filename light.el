@@ -22,18 +22,18 @@
 (require 'smooth-scroll)
 (smooth-scroll-mode t)
 
-
 (global-set-key (kbd "C-S-s") 'replace-string)
 (global-set-key (kbd "C-S-n") 'scroll-up-1)
 (global-set-key (kbd "C-S-p") 'scroll-down-1)
 
+(global-set-key [mouse-12] 'ignore)
 
 ;; Configure org-mode
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
-
+(setq org-agenda-files (list "~/Dropbox/my-texts/gtd.org"))
 
 ;; Add everything above this line
 
@@ -58,7 +58,8 @@
                                   face indentation space-after-tab)
       ediff-window-setup-function 'ediff-setup-windows-plain
       xterm-mouse-mode t
-      org-fast-tag-selection-single-key t)
+      org-fast-tag-selection-single-key t
+      default-input-method "russian-computer")
 
 ;; Save a list of recent files visited.
 (recentf-mode 1)
