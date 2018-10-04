@@ -12,9 +12,9 @@
 
 (setq-default truncate-lines nil)
 
-;; Load plugins
-
-(load-theme 'zenburn t)
+;; (load-theme 'zenburn t)
+(load-theme 'nord t)
+(setq nord-comment-brightness 20)
 
 ;; (require 'magit)
 
