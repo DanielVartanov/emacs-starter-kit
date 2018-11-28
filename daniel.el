@@ -30,6 +30,8 @@
 
 (require 'ido)
 (ido-mode t)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
 
 (require 'rinari)
 
@@ -133,3 +135,5 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command) ;; Old M-x.
+
+(define-key global-map (kbd "RET") 'newline-and-indent)
