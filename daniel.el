@@ -65,6 +65,10 @@
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
 
+;; Go mode
+
+(add-hook 'go-mode-hook 'lsp-deferred)
+
 ;; Javascript mode
 
 (require 'js2-mode)
