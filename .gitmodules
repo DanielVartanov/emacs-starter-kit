@@ -31,3 +31,6 @@
 [submodule "vendor/lua-mode"]
 	path = vendor/lua-mode
 	url = https://github.com/immerrr/lua-mode.git
+[submodule "vendor/fzf"]
+	path = vendor/fzf
+	url = https://github.com/bling/fzf.el.git

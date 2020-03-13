@@ -44,6 +44,11 @@
 ;; (rvm-activate-corresponding-ruby)
 
 
+;; fzf
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/fzf"))
+(require 'fzf)
+
 ;; RSpec mode
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rspec-mode"))
