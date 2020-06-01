@@ -33,15 +33,7 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 
-(require 'rinari)
-
 (smex-initialize)
-
-
-;; RVM
-
-(require 'rvm)
-;; (rvm-activate-corresponding-ruby)
 
 
 ;; fzf
@@ -73,10 +65,6 @@
 ;; Go mode
 
 (add-hook 'go-mode-hook 'lsp-deferred)
-
-;; Javascript mode
-
-(require 'js2-mode)
 
 ;; ANSI colours in shell
 

@@ -2,13 +2,17 @@
 ;;
 ;;; Code:
 
+(add-to-list 'load-path (directory-file-name
+                         (or (file-name-directory #$) (car load-path))))
+
 
-;;;### (autoloads nil nil ("logito-pkg.el" "logito.el") (20855 31000
-;;;;;;  550795 0))
+;;;### (autoloads nil "logito" "logito.el" (0 0 0 0))
+;;; Generated autoloads from logito.el
+
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "logito" '("logito-")))
 
 ;;;***
 
-(provide 'logito-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
