@@ -25,9 +25,6 @@
 (add-to-list 'load-path (concat dotfiles-dir "/starter-kit"))
 
 ;; Load up ELPA, the package manager
-(add-to-list 'load-path (concat dotfiles-dir "/elpa-to-submit"))
-
-(setq autoload-file (concat dotfiles-dir "loaddefs.el"))
 (setq package-user-dir (concat dotfiles-dir "elpa"))
 (setq custom-file (concat dotfiles-dir "custom.el"))
 
@@ -63,7 +60,6 @@
 (require 'starter-kit-ruby)
 (require 'starter-kit-js)
 
-(regen-autoloads)
 (load custom-file 'noerror)
 
 ;; You can keep system- or user-specific customizations here
