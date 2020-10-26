@@ -22,6 +22,11 @@
 (require 'smooth-scroll)
 (smooth-scroll-mode t)
 
+(smex-initialize)
+
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
 (global-set-key (kbd "C-S-s") 'replace-string)
 (global-set-key (kbd "C-S-n") 'scroll-up-1)
 (global-set-key (kbd "C-S-p") 'scroll-down-1)
