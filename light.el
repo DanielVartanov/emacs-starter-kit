@@ -41,6 +41,13 @@
 
 (setq org-agenda-files (list "~/Dropbox/my-texts/gtd.org"))
 
+;; Custom functions
+
+(defun goto-random-line ()
+  (interactive)
+  (goto-char (point-min))
+  (forward-line (1- (random (count-lines (point-min) (point-max))))))
+
 ;; Add everything above this line
 
 ;; Если кажется, что нет чего-то привычного, расскомментируй эту строку
