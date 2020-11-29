@@ -41,12 +41,30 @@
 
 (setq org-agenda-files (list "~/Dropbox/my-texts/gtd.org"))
 
+
 ;; Custom functions
 
 (defun goto-random-line ()
   (interactive)
   (goto-char (point-min))
   (forward-line (1- (random (count-lines (point-min) (point-max))))))
+
+(defun org-up-heading-upmost ()
+  (outline-back-to-heading t)
+  (while (not (or (= (funcall outline-level) 1) (bobp)))
+    (outline-previous-heading)
+    )
+  )
+
+(defun org-agenda-pick-random-task ()
+  (interactive)
+  (goto-random-line)
+  (org-agenda-goto)
+  (org-up-heading-upmost)
+  (org-show-subtree)
+  (org-narrow-to-subtree)
+  )
+
 
 ;; Add everything above this line
 
