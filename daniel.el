@@ -126,8 +126,6 @@
 (global-set-key [(control left)]  'scroll-right-1)
 (global-set-key [(control right)] 'scroll-left-1)
 
-(setq magit-last-seen-setup-instructions "1.4.0")
-
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
