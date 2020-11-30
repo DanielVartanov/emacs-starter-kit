@@ -9,7 +9,6 @@
 
 (setq-default truncate-lines nil)
 
-
 (setq dotfiles-dir (file-name-directory
                      (or (buffer-file-name) load-file-name)))
 
@@ -23,6 +22,8 @@
 (smooth-scroll-mode t)
 
 (smex-initialize)
+
+;; Key bindings
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -91,9 +92,6 @@
       xterm-mouse-mode t
       org-fast-tag-selection-single-key t
       default-input-method "russian-computer")
-
-;; Save a list of recent files visited.
-(recentf-mode 1)
 
 ;; Highlight current line
 (global-hl-line-mode +1)
