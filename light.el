@@ -14,7 +14,8 @@
 
 (add-to-list 'load-path (concat dotfiles-dir "/starter-kit"))
 
-(package-initialize)
+(when (< emacs-major-version 27)
+  (package-initialize))
 
 (require 'starter-kit-bindings)
 

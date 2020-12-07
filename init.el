@@ -33,7 +33,10 @@
                   ("elpa" . "http://tromey.com/elpa/")
                   ("melpa-stable" . "http://stable.melpa.org/packages/")))
   (add-to-list 'package-archives source t))
-(package-initialize)
+
+(when (< emacs-major-version 27) ;; packages initialization happens automatically before init.el in emacs 27+
+  (package-initialize))
+
 (require 'starter-kit-elpa)
 
 ;; These should be loaded on startup rather than autoloaded on demand
