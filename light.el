@@ -24,6 +24,9 @@
 
 (smex-initialize)
 
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/fancy-narrow"))
+(require 'fancy-narrow)
+
 ;; Key bindings
 
 (global-set-key (kbd "M-x") 'smex)
