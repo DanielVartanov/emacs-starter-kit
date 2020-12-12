@@ -67,7 +67,7 @@
 ;; centered-window-mode
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/centered-window-mode"))
-(require 'centered-window-mode)
+(require 'centered-window)
 
 ;; fancy-narrow
 
