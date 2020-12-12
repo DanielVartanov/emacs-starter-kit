@@ -1,80 +1,46 @@
-;;; init.el --- Where all the magic begins
-;;
-;; Part of the Emacs Starter Kit
-;;
-;; This is the first thing to get loaded.
-;;
-;; "Emacs outshines all other editing software in approximately the
-;; same way that the noonday sun does the stars. It is not just bigger
-;; and brighter; it simply makes everything else vanish."
-;; -Neal Stephenson, "In the Beginning was the Command Line"
-
-;; Turn off mouse interface early in startup to avoid momentary display
-;; You really don't need these; trust me.
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-(setq image-transform-resize 'fit-width)
-
-;; Load path etc.
-
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
 
-(add-to-list 'load-path (concat dotfiles-dir "/starter-kit"))
-
-;; Load up ELPA, the package manager
-(setq package-user-dir (concat dotfiles-dir "elpa"))
-(setq custom-file (concat dotfiles-dir "custom.el"))
-
 (require 'package)
-(dolist (source '(("marmalade" . "http://marmalade-repo.org/packages/")
-                  ("elpa" . "http://tromey.com/elpa/")
-                  ("melpa-stable" . "http://stable.melpa.org/packages/")))
-  (add-to-list 'package-archives source t))
+;; Set ELPA packages dir explicitly for the case if you are running
+;; from an alternative .emacs.d directory (i.e. not in ~/.emacs.d)
+(setq package-user-dir (concat dotfiles-dir "elpa"))
 
-(when (< emacs-major-version 27) ;; packages initialization happens automatically before init.el in emacs 27+
-  (package-initialize))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 
-(require 'starter-kit-elpa)
+(package-initialize) ;; TODO: investigate why emacs 27.1 does not
+;; initialize packages automatically, CHANGELOG says it should
 
 ;; These should be loaded on startup rather than autoloaded on demand
 ;; since they are likely to be used in every session
 
-(require 'cl)
-(require 'saveplace)
+(require 'cl-lib)
 (require 'ffap)
 (require 'uniquify)
 (require 'ansi-color)
-(require 'recentf)
-
-;; backport some functionality to Emacs 22 if needed
-(require 'dominating-file)
 
 ;; Load up starter kit customizations
 
+(add-to-list 'load-path (concat dotfiles-dir "/starter-kit"))
 (require 'starter-kit-defuns)
 (require 'starter-kit-bindings)
 (require 'starter-kit-misc)
 (require 'starter-kit-eshell)
 (require 'starter-kit-lisp)
-(require 'starter-kit-perl)
 (require 'starter-kit-ruby)
 (require 'starter-kit-js)
 
-(load custom-file 'noerror)
+;; Load user-specific (like daniel.el) and machine-specific (like daniel-xps.el) init files
 
-;; You can keep system- or user-specific customizations here
+;; TODO: perhaps you do not need `daniel.el` as init.el is your file
 
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
-      user-specific-config (concat dotfiles-dir user-login-name ".el")
-      user-specific-dir (concat dotfiles-dir user-login-name))
-(add-to-list 'load-path user-specific-dir)
+      user-specific-config (concat dotfiles-dir user-login-name ".el"))
 
 (if (file-exists-p system-specific-config) (load system-specific-config))
-(if (file-exists-p user-specific-dir)
-  (mapc #'load (directory-files user-specific-dir nil ".*el$")))
 (if (file-exists-p user-specific-config) (load user-specific-config))
-
-;;; init.el ends here

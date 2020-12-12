@@ -1,24 +1,13 @@
 (require 'better-defaults)
 
-;; Emacs frame setting
-
-(custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . fullboth)))))
-
-;; (toggle-frame-fullscreen)
-
-(set-default-font "Source Code Pro")
+(set-frame-font "Source Code Pro")
 (set-face-attribute 'default nil :height 130)
 
 (setq-default truncate-lines nil)
 
-;; (load-theme 'zenburn t)
 (load-theme 'nord t)
-(setq nord-comment-brightness 20)
 
 ;; (require 'magit)
-
-(require 'gist)
 
 (require 'yasnippet)
 (setq yas-snippet-dirs

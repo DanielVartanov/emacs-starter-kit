@@ -53,9 +53,6 @@
 ;; Enable syntax highlighting for older Emacsen that have it off
 (global-font-lock-mode t)
 
-;; Save a list of recent files visited.
-(recentf-mode 1)
-
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
 
