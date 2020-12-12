@@ -14,7 +14,7 @@
       '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
 
-(require 'smooth-scroll)
+(require 'smooth-scroll) ;; TODO: this causes "Package cl is deprecated" warning on startup
 (smooth-scroll-mode t)
 
 (require 'ido)
