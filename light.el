@@ -27,6 +27,10 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/fancy-narrow"))
 (require 'fancy-narrow)
 
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/fzf"))
+(require 'fzf)
+
+
 ;; Key bindings
 
 (global-set-key (kbd "M-x") 'smex)
