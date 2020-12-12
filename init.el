@@ -15,6 +15,7 @@
 
 (package-initialize) ;; TODO: investigate why emacs 27.1 does not
 ;; initialize packages automatically, CHANGELOG says it should
+;; See here: https://www.masteringemacs.org/article/whats-new-in-emacs-27-1
 
 ;; These should be loaded on startup rather than autoloaded on demand
 ;; since they are likely to be used in every session
