@@ -14,8 +14,12 @@
 
 (add-to-list 'load-path (concat dotfiles-dir "/starter-kit"))
 
-(when (< emacs-major-version 27)
-  (package-initialize))
+(package-initialize)
+
+(require 'cl-lib)
+(require 'ffap)
+(require 'uniquify)
+(require 'ansi-color)
 
 (require 'starter-kit-bindings)
 
@@ -30,6 +34,9 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/fzf"))
 (require 'fzf)
 
+(require 'better-defaults)
+
+(setq ido-use-filename-at-point nil)
 
 ;; Key bindings
 
