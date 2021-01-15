@@ -25,6 +25,11 @@
 (require 'uniquify)
 (require 'ansi-color)
 
+;; Multiple cursors
+
+(require 'multiple-cursors)
+
+
 ;; Load up starter kit customizations
 
 (add-to-list 'load-path (concat dotfiles-dir "/starter-kit"))
