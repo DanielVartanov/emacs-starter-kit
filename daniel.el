@@ -98,8 +98,14 @@
 
 ;; Rebindings
 
-(global-set-key (kbd "C-x 3") '(lambda () (interactive) (split-window-horizontally) (ido-switch-buffer-other-window)))
-(global-set-key (kbd "C-x 2") '(lambda () (interactive) (split-window-vertically) (ido-switch-buffer-other-window)))
+(global-set-key (kbd "C-x 3") '(lambda ()
+                                 (interactive)
+                                 (split-window-horizontally)
+                                 (other-window 1)))
+
+(global-set-key (kbd "C-x 2") '(lambda () (interactive)
+                                 (split-window-vertically)
+                                 (other-window 1)))
 
 (global-set-key (kbd "C-x C-o") 'delete-blank-lines)
 
