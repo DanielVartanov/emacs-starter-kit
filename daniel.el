@@ -55,24 +55,29 @@
 
 (add-hook 'go-mode-hook 'lsp-deferred)
 
+
 ;; ANSI colours in shell
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
 
+
 ;; demo-it
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/demo-it"))
+
 
 ;; centered-window-mode
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/centered-window-mode"))
 (require 'centered-window)
 
+
 ;; fancy-narrow
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/fancy-narrow"))
 (require 'fancy-narrow)
+
 
 ;; org-tree-slide
 
@@ -81,6 +86,28 @@
 
 (global-set-key (kbd "<f8>") 'org-tree-slide-mode)
 (global-set-key (kbd "S-<f8>") 'org-tree-slide-skip-done-toggle)
+
+
+;; projectile
+
+(require 'projectile)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(setq projectile-sort-order 'recently-active)
+(projectile-mode +1)
+
+;; rubocop
+(require 'rubocop)
+(add-hook 'ruby-mode-hook #'rubocop-mode)
+
+;; Multiple cursors
+
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
 
 ;; Misc options
 
@@ -109,7 +136,7 @@
 
 (global-set-key (kbd "C-x C-o") 'delete-blank-lines)
 
-(global-set-key (kbd "C-C C-r") 'ruby-send-region)
+(global-set-key (kbd "C-S-c C-r") 'ruby-send-region)
 
 (global-set-key (kbd "M-b") 'ruby-backward-sexp)
 (global-set-key (kbd "M-f") 'ruby-forward-sexp)

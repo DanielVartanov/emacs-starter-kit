@@ -582,13 +582,18 @@ Create a squash commit targeting COMMIT and instantly rebase.
 (autoload 'magit-commit-reshelve "magit-commit" "\
 Change the committer date and possibly the author date of `HEAD'.
 
-If you are the author of `HEAD', then both dates are changed,
-otherwise only the committer date.  The current time is used
-as the initial minibuffer input and the original author (if
-that is you) or committer date is available as the previous
+The current time is used as the initial minibuffer input and the
+original author or committer date is available as the previous
 history element.
 
-\(fn DATE)" t nil)
+Both the author and the committer dates are changes, unless one
+of the following is true, in which case only the committer date
+is updated:
+- You are not the author of the commit that is being reshelved.
+- The command was invoked with a prefix argument.
+- Non-interactively if UPDATE-AUTHOR is nil.
+
+\(fn DATE UPDATE-AUTHOR &optional ARGS)" t nil)
 
 (autoload 'magit-commit-absorb-modules "magit-commit" "\
 Spread modified modules across recent commits.
@@ -935,7 +940,11 @@ on.
 This command is only intended for interactive use and should only
 be used on highly rearranged and unpublished history.
 
-\(fn REV)" t nil)
+If KEYID is non-nil, then use that to sign all reshelved commits.
+Interactively use the value of the \"--gpg-sign\" option in the
+list returned by `magit-rebase-arguments'.
+
+\(fn REV KEYID)" t nil)
 
 (autoload 'magit-pop-revision-stack "magit-extras" "\
 Insert a representation of a revision into the current buffer.
@@ -1460,7 +1469,7 @@ Abort the current merge operation.
 ;;;### (autoloads nil "magit-mode" "magit-mode.el" (0 0 0 0))
 ;;; Generated autoloads from magit-mode.el
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "magit-mode" '("disable-magit-save-buffers" "inhibit-magit-refresh" "magit-")))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "magit-mode" '("disable-magit-save-buffers" "magit-")))
 
 ;;;***
 
