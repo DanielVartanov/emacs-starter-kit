@@ -50,12 +50,27 @@
 (global-set-key [mouse-12] 'ignore)
 
 ;; Configure org-mode
+
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
 
 (setq org-agenda-files (list "~/Dropbox/my-texts/gtd.org"))
+
+(setq
+ org-agenda-custom-commands
+ '(
+   ("cd" "this_day" tags "this_day")
+   ("cw" "this_week" tags "this_week")
+   ("cm" "this_month" tags "this_month")
+   ("cq" "this_quarter" tags "this_quarter")
+   ("cy" "this_year" tags "this_year")
+   ("cg" "green" tags "green")
+   ("cz" "do_delegate" tags "do_delegate")
+   ("c4" "4cards" tags "4cards")
+   )
+ )
 
 
 ;; Custom functions
@@ -106,6 +121,7 @@
       ediff-window-setup-function 'ediff-setup-windows-plain
       xterm-mouse-mode t
       org-fast-tag-selection-single-key t
+      org-completion-use-ido t
       default-input-method "russian-computer")
 
 ;; Highlight current line
