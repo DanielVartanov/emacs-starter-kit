@@ -113,6 +113,16 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
+;; web-mode
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+
+(set-face-attribute 'web-mode-html-tag-face          nil :foreground "#777777")
+(set-face-attribute 'web-mode-html-attr-name-face    nil :foreground "#aaaaaa")
+(set-face-attribute 'web-mode-html-attr-equal-face   nil :foreground "#eeeeee")
+(set-face-attribute 'web-mode-html-attr-value-face   nil :foreground "RosyBrown")
+
 
 ;; Misc options
 
