@@ -96,7 +96,12 @@
 (setq projectile-sort-order 'recently-active)
 (projectile-mode +1)
 
+;; Ruby
+
+(setq ruby-insert-encoding-magic-comment nil)
+
 ;; rubocop
+
 (require 'rubocop)
 (add-hook 'ruby-mode-hook #'rubocop-mode)
 
