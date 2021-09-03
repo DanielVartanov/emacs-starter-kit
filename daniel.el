@@ -169,3 +169,7 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command) ;; Old M-x.
 
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+(global-set-key (kbd "C-S-<prior>") 'text-scale-increase)
+(global-set-key (kbd "C-S-<next>") 'text-scale-decrease)
+(global-set-key (kbd "C-S-<home>") 'text-scale-set)
