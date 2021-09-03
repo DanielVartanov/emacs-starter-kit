@@ -38,6 +38,15 @@
 
 (setq ido-use-filename-at-point nil)
 
+
+;; Projectile
+
+(require 'projectile)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(setq projectile-sort-order 'recentf)
+(projectile-mode +1)
+
+
 ;; Key bindings
 
 (global-set-key (kbd "M-x") 'smex)
