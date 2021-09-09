@@ -1,4 +1,4 @@
-#name : do ... end
+#name : do |...|  ... end
 # --
 do |${1:args}|
   $0
