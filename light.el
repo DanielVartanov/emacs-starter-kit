@@ -78,6 +78,7 @@
    ("cg" "green" tags "green")
    ("cz" "do_delegate" tags "do_delegate")
    ("c4" "4cards" tags "4cards")
+   ("u" "untagged" tags "-{.*}")
    )
  )
 
