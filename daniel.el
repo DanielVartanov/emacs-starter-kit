@@ -79,6 +79,12 @@
 (require 'fancy-narrow)
 
 
+;; Orderless
+
+(require 'orderless)
+(setq completion-styles '(orderless))
+
+
 ;; Selectrum
 
 (selectrum-mode +1)
