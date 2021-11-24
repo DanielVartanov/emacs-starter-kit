@@ -79,6 +79,11 @@
 (require 'fancy-narrow)
 
 
+;; Selectrum
+
+(selectrum-mode +1)
+
+
 ;; org-tree-slide
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/org-tree-slide"))
