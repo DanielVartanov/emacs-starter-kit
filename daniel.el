@@ -99,22 +99,32 @@
 (global-set-key (kbd "S-<f8>") 'org-tree-slide-skip-done-toggle)
 
 
+;; recentf
+
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 250)
+
+
 ;; projectile
 
 (require 'projectile)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(setq projectile-sort-order 'recently-active)
+(setq projectile-indexing-method 'hybrid)
+(setq projectile-sort-order 'recentf)
 (projectile-mode +1)
+
 
 ;; Ruby
 
 (setq ruby-insert-encoding-magic-comment nil)
 
+
 ;; rubocop
 
 (require 'rubocop)
 (add-hook 'ruby-mode-hook #'rubocop-mode)
+
 
 ;; Multiple cursors
 
