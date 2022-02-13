@@ -194,3 +194,6 @@
 (global-set-key (kbd "C-S-<prior>") 'text-scale-increase)
 (global-set-key (kbd "C-S-<next>") 'text-scale-decrease)
 (global-set-key (kbd "C-S-<home>") 'text-scale-set)
+
+
+(message nil) ;; Clear mini-buffer
