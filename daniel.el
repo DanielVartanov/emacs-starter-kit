@@ -5,9 +5,8 @@
 
 (setq-default truncate-lines nil)
 
-(load-theme 'nord t)
-
-;; (require 'magit)
+(load-theme 'danneskjold t)
+;; (load-theme 'nord t)
 
 (require 'yasnippet)
 (setq yas-snippet-dirs
