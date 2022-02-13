@@ -105,6 +105,10 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 250)
 
+(defun clear-message() (message nil)) ;; Clears the minibuffer while keeping the message in the `*Messages*` buffer
+(advice-add 'recentf-save-list :after 'clear-message)
+(run-with-timer 0 (* 5 60) 'recentf-save-list) ;; Because by default recentf would save the list only when/if Emacs exits properly
+
 
 ;; projectile
 
