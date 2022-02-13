@@ -4,6 +4,7 @@
 (set-face-attribute 'default nil :height 130)
 
 (setq-default truncate-lines nil)
+(setq initial-scratch-message nil)
 
 (load-theme 'danneskjold t)
 ;; (load-theme 'nord t)
