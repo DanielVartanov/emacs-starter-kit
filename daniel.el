@@ -118,6 +118,7 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (setq projectile-indexing-method 'hybrid)
 (setq projectile-sort-order 'recentf)
+(setq projectile-switch-project-action 'projectile-vc)
 (projectile-mode +1)
 
 
