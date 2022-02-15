@@ -116,9 +116,20 @@
 
 (require 'projectile)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 (setq projectile-indexing-method 'hybrid)
 (setq projectile-sort-order 'recentf)
 (setq projectile-switch-project-action 'projectile-vc)
+
+;; Invalidate Projectile cache when magit switched branches
+(defun run-projectile-invalidate-cache (&rest _args)
+  ;; We ignore the args to `magit-checkout'.
+  (projectile-invalidate-cache nil))
+(advice-add 'magit-checkout
+            :after #'run-projectile-invalidate-cache)
+(advice-add 'magit-branch-and-checkout ; This is `b c'.
+            :after #'run-projectile-invalidate-cache)
+
 (projectile-mode +1)
 
 
