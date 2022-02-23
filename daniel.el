@@ -112,10 +112,15 @@
 (run-with-timer 0 (* 5 60) 'recentf-save-list) ;; Because by default recentf would save the list only when/if Emacs exits properly
 
 
+;; rg
+(setq rg-executable "/usr/bin/rg") ;; Because in console we use a custom script which is badly compatible with `rg` emacs package
+
+
 ;; projectile
 
 (require 'projectile)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p s g") 'projectile-ripgrep)
 
 (setq projectile-indexing-method 'hybrid)
 (setq projectile-sort-order 'recentf)
