@@ -114,7 +114,7 @@
 
 ;; rg
 (setq rg-executable "/usr/bin/rg") ;; Because in console we use a custom script which is badly compatible with `rg` emacs package
-(setq rg-command-line-flags '("--hidden"))
+(setq rg-command-line-flags '("--hidden")) ;; Otherwise important files in ~/.home-directory don't get searched). If you have annoyingly large hidden files in your project, just use .rgignore to ignore them
 
 
 ;; projectile
