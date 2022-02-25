@@ -1,0 +1,5 @@
+#name : specify do .. end
+# --
+specify do
+  $0
+end
