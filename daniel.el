@@ -120,6 +120,9 @@
 ;; projectile
 
 (require 'projectile)
+
+(setq projectile-project-search-path '("/home/daniel/src/"))
+
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p s g") 'projectile-ripgrep)
 
