@@ -114,6 +114,7 @@
 
 ;; rg
 (setq rg-executable "/usr/bin/rg") ;; Because in console we use a custom script which is badly compatible with `rg` emacs package
+(setq rg-command-line-flags '("--hidden"))
 
 
 ;; projectile
