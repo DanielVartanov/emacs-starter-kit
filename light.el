@@ -79,6 +79,7 @@
    ("cz" "do_delegate" tags "do_delegate")
    ("c4" "4cards" tags "4cards")
    ("cv" "work" tags "work")
+   ("ce" "extinguisher" tags "extinguisher")
    ("u" "untagged" tags "-{.*}")
    )
  )
