@@ -65,8 +65,6 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cc" 'org-capture)
 
-(setq org-agenda-files (list "~/Dropbox/my-texts/gtd.org"))
-
 (setq
  org-agenda-custom-commands
  '(
@@ -78,14 +76,13 @@
    ("cg" "green" tags "green")
    ("cz" "do_delegate" tags "do_delegate")
    ("c4" "4cards" tags "4cards")
-   ("cv" "work" tags "work")
    ("ce" "extinguisher" tags "extinguisher")
    ("u" "untagged" tags "-{.*}")
    )
  )
 
 
-;; Custom functions
+;; My custom functions
 
 (defun goto-random-line ()
   (interactive)
