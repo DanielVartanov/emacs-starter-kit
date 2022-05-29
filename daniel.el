@@ -1,7 +1,7 @@
 (require 'better-defaults)
 
 (set-frame-font "Source Code Pro")
-(set-face-attribute 'default nil :height 130)
+(set-face-attribute 'default nil :height 140)
 
 (setq-default truncate-lines nil)
 
