@@ -27,10 +27,17 @@
 (smex-initialize)
 
 
+;; copilot.el
+
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/copilot.el"))
+(require 'copilot)
+
+
 ;; fzf
 
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/fzf"))
 (require 'fzf)
+
 
 ;; RSpec mode
 
