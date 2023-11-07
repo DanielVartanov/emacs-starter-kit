@@ -12,6 +12,7 @@
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+(add-to-list 'package-archives '("jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/") t)
 
 (package-initialize) ;; TODO: investigate why emacs 27.1 does not
 ;; initialize packages automatically, CHANGELOG says it should
