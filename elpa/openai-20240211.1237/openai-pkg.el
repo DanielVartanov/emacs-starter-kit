@@ -1,0 +1,16 @@
+(define-package "openai" "20240211.1237" "Elisp library for the OpenAI API"
+  '((emacs "26.1")
+    (request "0.3.0")
+    (tblui "0.1.0"))
+  :commit "34c9ea4df753ed73b3e070a6d560dc43d5693599" :authors
+  '(("Jen-Chieh" . "jcs090218@gmail.com"))
+  :maintainers
+  '(("Jen-Chieh" . "jcs090218@gmail.com"))
+  :maintainer
+  '("Jen-Chieh" . "jcs090218@gmail.com")
+  :keywords
+  '("comm" "openai")
+  :url "https://github.com/emacs-openai/openai")
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
