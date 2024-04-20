@@ -34,6 +34,3 @@
 [submodule "vendor/fzf"]
 	path = vendor/fzf
 	url = https://github.com/bling/fzf.el.git
-[submodule "vendor/copilot.el"]
-	path = vendor/copilot.el
-	url = https://github.com/zerolfx/copilot.el
