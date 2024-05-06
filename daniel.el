@@ -32,34 +32,14 @@
 
 (smex-initialize)
 
-
-;; copilot.el
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/copilot.el"))
-(require 'copilot)
-
-
-;; fzf
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/fzf"))
-(require 'fzf)
-
-
 ;; RSpec mode
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rspec-mode"))
-(require 'rspec-mode)
 
 (setq rspec-use-rake-flag nil)
 (setq rspec-use-rvm t)
-(setq rspec-use-zeus-when-possible t)
-(setq rspec-compilation-buffer-name "*rspec*")
 (setq compilation-scroll-output nil)
 
 
 ;; Lua mode
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/lua-mode"))
 
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
@@ -77,23 +57,6 @@
 (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
 
 
-;; demo-it
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/demo-it"))
-
-
-;; centered-window-mode
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/centered-window-mode"))
-(require 'centered-window)
-
-
-;; fancy-narrow
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/fancy-narrow"))
-(require 'fancy-narrow)
-
-
 ;; Orderless
 
 (require 'orderless)
@@ -103,15 +66,6 @@
 ;; Selectrum
 
 (selectrum-mode +1)
-
-
-;; org-tree-slide
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/org-tree-slide"))
-(require 'org-tree-slide)
-
-(global-set-key (kbd "<f8>") 'org-tree-slide-mode)
-(global-set-key (kbd "S-<f8>") 'org-tree-slide-skip-done-toggle)
 
 
 ;; recentf
