@@ -23,16 +23,11 @@
 
 (require 'starter-kit-bindings)
 
-(require 'smooth-scroll)
-(smooth-scroll-mode t)
+(good-scroll-mode 1)
+(global-set-key (kbd "C-S-n") #'good-scroll-up)
+(global-set-key (kbd "C-S-p") #'good-scroll-down)
 
 (smex-initialize)
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/fancy-narrow"))
-(require 'fancy-narrow)
-
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/fzf"))
-(require 'fzf)
 
 (require 'better-defaults)
 
@@ -53,8 +48,6 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 (global-set-key (kbd "C-S-s") 'replace-string)
-(global-set-key (kbd "C-S-n") 'scroll-up-1)
-(global-set-key (kbd "C-S-p") 'scroll-down-1)
 
 (global-set-key [mouse-12] 'ignore)
 

@@ -22,9 +22,6 @@
       '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
 
-(require 'smooth-scroll) ;; TODO: this causes "Package cl is deprecated" warning on startup
-(smooth-scroll-mode t)
-
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
@@ -135,6 +132,12 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 
 
+;; good scroll
+
+(good-scroll-mode 1)
+(global-set-key (kbd "C-S-n") #'good-scroll-up)
+(global-set-key (kbd "C-S-p") #'good-scroll-down)
+
 ;; Misc options
 
 (setq default-input-method "russian-computer")
@@ -169,11 +172,6 @@
 (global-set-key (kbd "M-f") 'ruby-forward-sexp)
 
 (global-set-key (kbd "C-S-s") 'replace-string)
-
-(global-set-key (kbd "C-S-n")  'scroll-up-1)
-(global-set-key (kbd "C-S-p")    'scroll-down-1)
-(global-set-key [(control left)]  'scroll-right-1)
-(global-set-key [(control right)] 'scroll-left-1)
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
