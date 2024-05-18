@@ -1,9 +1,3 @@
-;; environment variables
-
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
-
-
 (require 'better-defaults)
 
 (set-frame-font "Source Code Pro")
@@ -29,11 +23,25 @@
 
 (smex-initialize)
 
+;; environment variables
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
+
+;; magit
+
+(with-eval-after-load 'magit
+  (transient-append-suffix 'magit-pull "-r"
+    '("-A" "Autostash" "--autostash")))
+
+
 ;; RSpec mode
 
 (setq rspec-use-rake-flag nil)
 (setq rspec-use-rvm t)
 (setq compilation-scroll-output nil)
+(add-hook 'after-init-hook 'inf-ruby-switch-setup) ;; to use binding.pry or byebug
 
 
 ;; Lua mode
