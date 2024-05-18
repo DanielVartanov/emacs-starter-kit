@@ -5,13 +5,17 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        backward-sexp
         electric-newline-and-maybe-indent
+        forward-sexp
         indent-for-tab-command
         isearch-forward-regexp
         ruby-backward-sexp
+        ruby-forward-sexp
         smex
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        replace-string
         ))
