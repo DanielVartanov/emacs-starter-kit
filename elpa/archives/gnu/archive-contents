@@ -206,14 +206,14 @@
 	   ("John Wiegley" . "jwiegley@gmail.com"))
 	  (:commit . "00e07e060218fbd1e16faaf10116c03b12e62580"))])
  (auctex .
-	 [(14 0 4)
+	 [(14 0 5)
 	  ((emacs
 	    (27 1)))
 	  "Integrated environment for *TeX*" tar
 	  ((:url . "https://www.gnu.org/software/auctex/")
 	   (:keywords "tex" "latex" "texinfo" "context" "doctex" "preview-latex")
 	   (:maintainer nil . "auctex-devel@gnu.org")
-	   (:commit . "44d54236056fccc32a0b26d6df2ceda5716b7df1"))])
+	   (:commit . "73edb3731e4bdbe3760fb4c12f94ae1aa075458f"))])
  (aumix-mode .
 	     [(7)
 	      nil "run the aumix program in a buffer" tar
@@ -1321,14 +1321,14 @@
 		     (:url . "https://elpa.gnu.org/packages/electric-spacing.html")
 		     (:commit . "122ac5d08c3d3d91251752136abab9721d90e36c"))])
  (elisp-benchmarks .
-		   [(1 15)
+		   [(1 16)
 		    nil "elisp benchmarks collection" tar
 		    ((:keywords "languages" "lisp")
 		     (:maintainer "Andrea Corallo" . "acorallo@gnu.org")
 		     (:authors
 		      ("Andrea Corallo" . "acorallo@gnu.org"))
 		     (:url . "https://elpa.gnu.org/packages/elisp-benchmarks.html")
-		     (:commit . "869a51d70200b2e86e0b78793f4a99c8e690b996"))])
+		     (:commit . "1a3d97954957a95a179806e0d49ca6d178b097af"))])
  (ellama .
 	 [(0 9 4)
 	  ((emacs
@@ -2401,7 +2401,7 @@
 	    ("Adam Porter" . "adam@alphapapa.net"))
 	   (:commit . "61c511541af474027c012de7063ddfdb3f8cc780"))])
  (llm .
-      [(0 14 3)
+      [(0 15 0)
        ((emacs
 	 (28 1))
 	(plz
@@ -2411,7 +2411,7 @@
 	(:maintainer "Andrew Hyatt" . "ahyatt@gmail.com")
 	(:authors
 	 ("Andrew Hyatt" . "ahyatt@gmail.com"))
-	(:commit . "0f25d08218bdd3ea808d6d15328482327a551471"))])
+	(:commit . "ebb7b6e4cddfd33429440bdc7387a11aac20a153"))])
  (lmc .
       [(1 4)
        nil "Little Man Computer in Elisp" tar
@@ -4674,6 +4674,17 @@
 		     (:authors
 		      ("Daniel Semyonov" . "daniel@dsemy.com"))
 		     (:commit . "ad92c184ccc06f46b2caf001bc8201d983eca626"))])
+ (window-tool-bar .
+		  [(0 2)
+		   ((emacs
+		     (29 1)))
+		   "Add tool bars inside windows" tar
+		   ((:keywords "mouse")
+		    (:maintainer "Jared Finder" . "jared@finder.org")
+		    (:authors
+		     ("Jared Finder" . "jared@finder.org"))
+		    (:url . "https://elpa.gnu.org/packages/window-tool-bar.html")
+		    (:commit . "be03dda5b0fc55e989bfa707c73f1cc990e24c3b"))])
  (windower .
 	   [(0 0 1)
 	    ((emacs
