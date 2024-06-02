@@ -163,6 +163,37 @@
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 
 
+;; eglot
+
+;;   eglot-go
+
+(add-hook 'go-ts-mode-hook 'eglot-ensure)
+
+(defun eglot-organize-imports-on-save ()
+  (defun eglot-organize-imports-nosignal ()
+    "Run eglot-organize-imports, but demote errors to messages."
+    ;; Demote errors to work around
+    ;; https://github.com/joaotavora/eglot/issues/411#issuecomment-749305401
+    ;; so that we do not prevent subsequent save hooks from running
+    ;; if we encounter a spurious error.
+    (with-demoted-errors "Error: %s" (eglot-organize-imports)))
+  (add-hook 'before-save-hook #'eglot-organize-imports-on-save))
+
+(add-hook 'go-ts-mode-hook #'eglot-organize-imports-on-save)
+(add-hook 'go-ts-mode-hook 'lsp-deferred)
+
+;;   eglot-ruby
+
+;; Important: in order to make eglot work with solargraph, ensure that
+;; you install `solargraph`/`ruby-lsp` gem using _system_ Ruby (run `rvm use
+;; system`) and using _global_ gemset (run `rvm gemset use global`)
+
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs '(ruby-mode . ("solargraph" "socket" "--port" :autoport))))
+
+(add-hook 'ruby-ts-mode-hook 'eglot-ensure)
+
+
 ;; Multiple cursors
 
 (require 'multiple-cursors)
