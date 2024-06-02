@@ -51,11 +51,6 @@
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
 
-;; Go mode
-
-(add-hook 'go-mode-hook 'lsp-deferred)
-
-
 ;; ANSI colours in shell
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
@@ -123,6 +118,49 @@
 
 (require 'rubocop)
 (add-hook 'ruby-mode-hook #'rubocop-mode)
+
+
+;; vterm
+
+(setq vterm-shell "/bin/bash --login")
+
+
+;; man
+
+(require 'man)
+(set-face-attribute 'Man-overstrike nil :inherit font-lock-type-face :bold t)
+(set-face-attribute 'Man-underline nil :inherit font-lock-keyword-face :underline t)
+
+
+;; tree-sitter
+
+(setq treesit-language-source-alist
+   '((bash "https://github.com/tree-sitter/tree-sitter-bash")
+     (cmake "https://github.com/uyha/tree-sitter-cmake")
+     (css "https://github.com/tree-sitter/tree-sitter-css")
+     (elisp "https://github.com/Wilfred/tree-sitter-elisp")
+     (go "https://github.com/tree-sitter/tree-sitter-go")
+     (gomod "https://github.com/camdencheek/tree-sitter-go-mod")
+     (dockerfile "https://github.com/camdencheek/tree-sitter-dockerfile")
+     (html "https://github.com/tree-sitter/tree-sitter-html")
+     (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
+     (json "https://github.com/tree-sitter/tree-sitter-json")
+     (make "https://github.com/alemuller/tree-sitter-make")
+     (markdown "https://github.com/ikatyang/tree-sitter-markdown")
+     (ruby "https://github.com/tree-sitter/tree-sitter-ruby")
+     (python "https://github.com/tree-sitter/tree-sitter-python")
+     (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+     (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+
+(dolist (source treesit-language-source-alist)
+  (unless (treesit-ready-p (car source))
+    (treesit-install-language-grammar (car source))))
+
+(add-to-list 'major-mode-remap-alist '(go-mode . go-ts-mode))
+(add-to-list 'major-mode-remap-alist '(sh-mode . bash-ts-mode))
+(add-to-list 'major-mode-remap-alist '(ruby-mode . ruby-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 
 
 ;; Multiple cursors
