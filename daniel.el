@@ -51,6 +51,11 @@
 (add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
 
+;; Kotlin mode
+
+(add-to-list 'auto-mode-alist '("\\.kt\\'" . kotlin-ts-mode))
+
+
 ;; ANSI colours in shell
 
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
@@ -151,7 +156,9 @@
      (python "https://github.com/tree-sitter/tree-sitter-python")
      (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
      (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-     (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+     (yaml "https://github.com/ikatyang/tree-sitter-yaml")
+     (kotlin "https://github.com/fwcd/tree-sitter-kotlin")
+     (java "https://github.com/tree-sitter/tree-sitter-java")))
 
 (dolist (source treesit-language-source-alist)
   (unless (treesit-ready-p (car source))
