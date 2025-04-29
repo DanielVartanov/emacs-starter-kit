@@ -127,7 +127,7 @@
 
 ;; vterm
 
-(setq vterm-shell "/bin/bash --login")
+(setq vterm-shell "/bin/bash --login -c \"cd `git root` && exec bash --login\"")
 
 
 ;; man
