@@ -55,6 +55,26 @@
 
 (add-to-list 'auto-mode-alist '("\\.kt\\'" . kotlin-ts-mode))
 
+;; This teaches `which-function` to recognise Kotlin function
+;; Which in its turn allows tracing the history of Kotlin functions **in git**.
+;; Just place a cursor inside a function and press `C-c M-g t`
+
+(defun my-kotlin-current-defun ()
+  "Custom function to find current Kotlin function using regex."
+  (save-excursion
+    (end-of-line)
+    (when (re-search-backward add-log-current-defun-header-regexp nil t)
+      (let ((match (match-string 3)))
+        (or match (match-string 0))))))
+
+(add-hook 'kotlin-ts-mode-hook
+          (lambda ()
+            ;; Set the regex for identifying Kotlin functions
+            (setq-local add-log-current-defun-header-regexp
+              "^[ \t]*\\(suspend[ \t]+\\)?\\(private[ \t]+\\)?fun[ \t]+\\([[:alnum:]_]+\\)")
+
+            (setq-local which-func-functions '(my-kotlin-current-defun))))
+
 
 ;; ANSI colours in shell
 
