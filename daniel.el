@@ -122,6 +122,20 @@
 (setq projectile-sort-order 'recentf)
 (setq projectile-switch-project-action 'projectile-vc)
 
+;; Configure Projectile for Kotlin
+(projectile-register-project-type 'kotlin-gradlew '("settings.gradle.kts")
+                                  :project-file "?*build.gradle.kts"
+                                  :compile "./gradlew build"
+                                  :test "./gradlew test"
+                                  :test-suffix "Test")
+
+(defun projectile-run-linter ()
+  "Run linter or formatter in the project root."
+  (interactive)
+  (projectile-with-default-dir (projectile-project-root)
+    (compile "./gradlew ktlintFormat")))
+(define-key projectile-mode-map (kbd "C-c p c l") #'projectile-run-linter)
+
 ;; Invalidate Projectile cache when magit switched branches
 (defun run-projectile-invalidate-cache (&rest _args)
   ;; We ignore the args to `magit-checkout'.
