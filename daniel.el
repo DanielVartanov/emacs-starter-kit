@@ -195,6 +195,7 @@
      (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
      (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
      (yaml "https://github.com/ikatyang/tree-sitter-yaml")
+     (rust "https://github.com/tree-sitter/tree-sitter-rust" "v0.23.2")
      (kotlin "https://github.com/fwcd/tree-sitter-kotlin")
      (java "https://github.com/tree-sitter/tree-sitter-java")))
 
@@ -206,6 +207,7 @@
 (add-to-list 'major-mode-remap-alist '(sh-mode . bash-ts-mode))
 (add-to-list 'major-mode-remap-alist '(ruby-mode . ruby-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
 
 
 ;; eglot
