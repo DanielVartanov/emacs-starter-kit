@@ -171,6 +171,10 @@
 (set-face-attribute 'Man-underline nil :inherit font-lock-keyword-face :underline t)
 
 
+;; editorconfig
+
+(editorconfig-mode 1)
+
 ;; tree-sitter
 
 (setq treesit-language-source-alist
