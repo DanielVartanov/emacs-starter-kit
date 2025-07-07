@@ -241,6 +241,20 @@
 (add-hook 'ruby-ts-mode-hook 'eglot-ensure)
 
 
+;; flycheck
+
+(global-flycheck-mode +1)
+
+
+;; flyover
+
+(require 'flyover)
+(add-hook 'flycheck-mode-hook #'flyover-mode)
+(setq flyover-levels '(error warning info))
+(setq flyover-use-theme-colors t)
+(setq flyover-checkers '(flycheck flymake))
+
+
 ;; Multiple cursors
 
 (require 'multiple-cursors)
