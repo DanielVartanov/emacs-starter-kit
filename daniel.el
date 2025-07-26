@@ -246,15 +246,6 @@
 (global-flycheck-mode +1)
 
 
-;; flyover
-
-(require 'flyover)
-(add-hook 'flycheck-mode-hook #'flyover-mode)
-(setq flyover-levels '(error warning info))
-(setq flyover-use-theme-colors t)
-(setq flyover-checkers '(flycheck flymake))
-
-
 ;; Multiple cursors
 
 (require 'multiple-cursors)
@@ -270,11 +261,10 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 
 
-;; good scroll
+;; scrolling
 
-(good-scroll-mode 1)
-(global-set-key (kbd "C-S-n") #'good-scroll-up)
-(global-set-key (kbd "C-S-p") #'good-scroll-down)
+(global-set-key (kbd "C-S-n") #'scroll-up-line)
+(global-set-key (kbd "C-S-p") #'scroll-down-line)
 
 ;; Misc options
 

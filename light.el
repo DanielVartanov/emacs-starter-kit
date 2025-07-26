@@ -23,9 +23,9 @@
 
 (require 'starter-kit-bindings)
 
-(good-scroll-mode 1)
-(global-set-key (kbd "C-S-n") #'good-scroll-up)
-(global-set-key (kbd "C-S-p") #'good-scroll-down)
+(global-set-key (kbd "C-S-n") #'scroll-up-line)
+(global-set-key (kbd "C-S-p") #'scroll-down-line)
+
 
 (smex-initialize)
 
