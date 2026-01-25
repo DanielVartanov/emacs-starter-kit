@@ -278,7 +278,6 @@
   :custom
   (minions-mode-line-delimiters nil) ;; Remove after switching to Emacs 31+
   (mode-line-modes-delimiters nil)
-  (minions-direct '(overwrite-mode))
   :config
   (setq minions-prominent-modes '(overwrite-mode))
   (minions-mode 1))
