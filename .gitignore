@@ -32,3 +32,4 @@ history
 /elpa/vterm*/vterm-module.so
 /projects
 /request/
+/secrets.el

@@ -31,6 +31,10 @@
 (require 'starter-kit-ruby)
 (require 'starter-kit-js)
 
+;; Load secrets
+
+(load (locate-user-emacs-file "secrets") t)
+
 ;; Load user-specific (like daniel.el) and machine-specific (like daniel-xps.el) init files
 
 ;; TODO: perhaps you do not need `daniel.el` as init.el is your file
