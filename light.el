@@ -75,6 +75,23 @@
  )
 
 
+;; Mode line configuration
+
+(setq-default mode-line-format
+              (remove '(vc-mode vc-mode) mode-line-format))
+
+;; Consider switching to a built-in `mode-line-collapse-minor-modes` once in Emacs 31+
+(use-package minions
+  :ensure t
+  :custom
+  (minions-mode-line-delimiters nil) ;; Remove after switching to Emacs 31+
+  (mode-line-modes-delimiters nil)
+  (minions-direct '(overwrite-mode))
+  :config
+  (setq minions-prominent-modes '(overwrite-mode))
+  (minions-mode 1))
+
+
 ;; My custom functions
 
 (defun goto-random-line ()
