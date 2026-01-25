@@ -1,6 +1,6 @@
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) load-file-name)))
@@ -11,19 +11,13 @@
 (setq package-user-dir (concat dotfiles-dir "elpa"))
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 (add-to-list 'package-archives '("jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/") t)
-
-(package-initialize) ;; TODO: investigate why emacs 27.1 does not
-;; initialize packages automatically, CHANGELOG says it should
-;; See here: https://www.masteringemacs.org/article/whats-new-in-emacs-27-1
 
 ;; These should be loaded on startup rather than autoloaded on demand
 ;; since they are likely to be used in every session
 
 (require 'cl-lib)
 (require 'ffap)
-(require 'uniquify)
 (require 'ansi-color)
 
 ;; Load up starter kit customizations
