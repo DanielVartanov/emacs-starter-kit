@@ -171,11 +171,22 @@
 (set-face-attribute 'Man-underline nil :inherit font-lock-keyword-face :underline t)
 
 
+;; hyprlang
+
+(use-package hyprlang-ts-mode
+  :ensure t
+  :custom
+  (hyprlang-ts-mode-indent-offset 4))
+
+
 ;; editorconfig
 
 (editorconfig-mode 1)
 
+
 ;; tree-sitter
+
+(require 'treesit)
 
 (setq treesit-language-source-alist
    '((bash "https://github.com/tree-sitter/tree-sitter-bash")
@@ -197,7 +208,8 @@
      (yaml "https://github.com/ikatyang/tree-sitter-yaml")
      (rust "https://github.com/tree-sitter/tree-sitter-rust" "v0.23.2")
      (kotlin "https://github.com/fwcd/tree-sitter-kotlin")
-     (java "https://github.com/tree-sitter/tree-sitter-java")))
+     (java "https://github.com/tree-sitter/tree-sitter-java")
+     (hyprlang "https://github.com/tree-sitter-grammars/tree-sitter-hyprlang")))
 
 (dolist (source treesit-language-source-alist)
   (unless (treesit-ready-p (car source))
