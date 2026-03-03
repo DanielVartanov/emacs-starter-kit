@@ -1,5 +1,6 @@
 (require 'better-defaults)
 
+;; NOTE: Emacs will automatically fallback to Nerd Fonts collection in case of a missing glyph
 (set-frame-font "Source Code Pro")
 (set-face-attribute 'default nil :height 140)
 
